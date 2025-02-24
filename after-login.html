@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <script src="auth.js" defer></script>
+</head>
+<body class="auth-body">
+    <header>
+        <h1>Welcome to Your Portfolio</h1>
+    </header>
+    <main>
+        <p>Hello, <span id="usernameDisplay">User </span>! You are now logged in.</p>
+        <img src="welcome-image.jpg" alt="Welcome Image" class="auth-image">
+        <div class="button-container">
+            <button onclick="window.location.href='portfolio.html'">View Portfolio</button>
+            <button onclick="window.location.href='projects.html'">My Projects</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+    </footer>
+    <script>
+        // Simulate getting the username from a login process
+        const username = localStorage.getItem('username') || 'User ';
+        document.getElementById('usernameDisplay').textContent = username;
+
+        function logout() {
+            // Clear user session (this is just a simulation)
+            localStorage.removeItem('username');
+            window.location.href = 'login.html'; // Redirect to login page
+        }
+    </script>
+</body>
+</html>

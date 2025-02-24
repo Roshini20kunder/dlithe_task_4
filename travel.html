@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Destinations</title>
+    <link rel="stylesheet" href="travel.css">
+    <script src="travel.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Explore the World</h1>
+    </header>
+
+    <main>
+        <section class="search-container">
+            <input type="text" id="searchInput" placeholder="Search destinations..." aria-label="Search Travel Destinations">
+            <select id="costFilter">
+                <option value="all">Filter by Cost</option>
+                <option value="low">Below $1000</option>
+                <option value="medium">$1000 - $3000</option>
+                <option value="high">Above $3000</option>
+            </select>
+            <select id="distanceFilter">
+                <option value="all">Filter by Distance</option>
+                <option value="short">0 - 2000 km</option>
+                <option value="medium">2000 - 6000 km</option>
+                <option value="long">Above 6000 km</option>
+            </select>
+        </section>
+
+        <div class="destination-container">
+            <!-- Travel Cards Will Be Injected Here -->
+        </div>
+    </main>
+
+    <!-- Modal for travel details -->
+    <div id="travelModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <img id="modalImage" src="" alt="Destination Image">
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <p><strong>Cost:</strong> <span id="modalCost"></span></p>
+            <p><strong>Distance:</strong> <span id="modalDistance"></span></p>
+            <button id="registerButton">Register for Trip</button>
+            <button id="homeButton">Return to Home</button>
+        </div>
+    </div>
+
+    <!-- Registration Form Modal -->
+    <div id="registrationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Register for Travel</h2>
+            <form id="registrationForm">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" required>
+
+                <label for="destination">Selected Destination:</label>
+                <input type="text" id="destination" readonly>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

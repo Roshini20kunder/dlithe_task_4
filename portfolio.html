@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <script src="portfolio.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+        <nav>
+            <button onclick="window.location.href='register.html'">Register</button>
+            <button onclick="window.location.href='login.html'">Login</button>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>"Hii.... its ROSHINI here"</h2>
+            <p>Here are some of my works showcasing my expertise in Artificial intelligence and Data Science , and Web Development.</p>
+        </section>
+        <section>
+            <h2>About Me</h2>
+            <p>Hello! I am an AI and Data Science student with expertise in Machine Learning, Web Development, and Cybersecurity. I have experience in full-stack development and have worked on various projects integrating AI solutions.</p>
+        </section>
+        <section>
+        <section>
+            <h2>Projects</h2>
+            <p>Here are some of my works.</p>
+            <img src="portfolio-image.jpg" alt="Portfolio Image" class="portfolio-image">
+            <table id="portfolioTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Project A</td>
+                        <td>Web Development</td>
+                    </tr>
+                    <tr>
+                        <td>Project B</td>
+                        <td>Machine Learning</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="input-container">
+                <input type="text" id="nameInput" placeholder="Enter Project Name" aria-label="Project Name">
+                <input type="text" id="categoryInput" placeholder="Enter Category" aria-label="Category">
+            </div>
+            <div class="button-container">
+                <button id="addRowButton">Add Project</button>
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchBox" placeholder="Search..." aria-label="Search Projects">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+    </footer>
+</body>
+</html>

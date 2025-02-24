@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+    </header>
+    <main>
+        <nav>
+            <ul>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="travel.html">Travel</a></li>
+            </ul>
+        </nav>
+        <img src="homepage.jpg" alt="Homepage Image" class="homepage-image">
+        <p>This is the homepage of my website.</p>
+        <table id="dataTable">
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+            </tr>
+            <tr>
+                <td>Project A</td>
+                <td>Web Development</td>
+            </tr>
+            <tr>
+                <td>Project B</td>
+                <td>AI & ML</td>
+            </tr>
+        </table>
+        
+        <div>
+            <input type="text" id="nameInput" placeholder="Enter Name">
+            <input type="text" id="categoryInput" placeholder="Enter Category">
+        </div>
+        
+        <div style="margin-top: 10px;">
+            <button id="addRowButton">Add Row</button>
+        </div>
+        
+        <div style="margin-top: 20px;">
+            <input type="text" id="searchBox" placeholder="Search...">
+        </div>
+    </main>
+</body>
+</html>
