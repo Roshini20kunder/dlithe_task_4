@@ -3,64 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Roshini's Portfolio</title>
     <link rel="stylesheet" href="portfolio.css">
     <script src="portfolio.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>My Portfolio</h1>
-        <nav>
-            <button onclick="window.location.href='register.html'">Register</button>
-            <button onclick="window.location.href='login.html'">Login</button>
-        </nav>
+        <div class="header-container">
+            <h1>Roshini's Portfolio</h1>
+            <nav>
+                <button onclick="window.location.href='register.html'">Register</button>
+                <button onclick="window.location.href='login.html'">Login</button>
+            </nav>
+        </div>
     </header>
+
     <main>
-        <section>
-            <h2>"Hii.... its ROSHINI here"</h2>
-            <p>Here are some of my works showcasing my expertise in Artificial intelligence and Data Science , and Web Development.</p>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2>Hi, I'm <span class="highlight">Roshini</span> 👋</h2>
+            <p>A passionate AI and Data Science student with expertise in Machine Learning, Web Development, and Cybersecurity.</p>
+            <img src="profile-image.jpg" alt="Roshini" class="profile-image">
         </section>
-        <section>
+
+        <!-- About Me Section -->
+        <section class="about">
             <h2>About Me</h2>
-            <p>Hello! I am an AI and Data Science student with expertise in Machine Learning, Web Development, and Cybersecurity. I have experience in full-stack development and have worked on various projects integrating AI solutions.</p>
+            <p>I am an AI and Data Science enthusiast skilled in Machine Learning, Deep Learning, and Full-Stack Development. I have worked on multiple projects integrating AI and Web Development solutions.</p>
         </section>
-        <section>
-        <section>
+
+        <!-- Skills Section -->
+        <section class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>🔹 Machine Learning & Deep Learning</li>
+                <li>🔹 Natural Language Processing</li>
+                <li>🔹 Computer Vision</li>
+                <li>🔹 Web Development (MERN Stack)</li>
+                <li>🔹 Cybersecurity & Ethical Hacking</li>
+                <li>🔹 Business Intelligence & Data Analytics</li>
+            </ul>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects">
             <h2>Projects</h2>
-            <p>Here are some of my works.</p>
-            <img src="portfolio-image.jpg" alt="Portfolio Image" class="portfolio-image">
+            <p>Here are some of my notable works:</p>
+            
             <table id="portfolioTable">
                 <thead>
                     <tr>
                         <th>Name</th>
                         <th>Category</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Project A</td>
+                        <td>Online Blood Service System</td>
                         <td>Web Development</td>
+                        <td><button class="delete-btn">Delete</button></td>
                     </tr>
                     <tr>
-                        <td>Project B</td>
+                        <td>Academic Pro</td>
                         <td>Machine Learning</td>
+                        <td><button class="delete-btn">Delete</button></td>
                     </tr>
                 </tbody>
             </table>
             <div class="input-container">
                 <input type="text" id="nameInput" placeholder="Enter Project Name" aria-label="Project Name">
                 <input type="text" id="categoryInput" placeholder="Enter Category" aria-label="Category">
-            </div>
-            <div class="button-container">
                 <button id="addRowButton">Add Project</button>
             </div>
             <div class="search-container">
                 <input type="text" id="searchBox" placeholder="Search..." aria-label="Search Projects">
             </div>
         </section>
+
+        <!-- Contact Section -->
+        <section class="contact">
+            <h2>Contact Me</h2>
+            <p>📧 Email: <a href="mailto:roshini@example.com">roshini@example.com</a></p>
+            <p>🔗 LinkedIn: <a href="https://linkedin.com/in/roshini" target="_blank">linkedin.com/in/roshini</a></p>
+            <p>🐦 Twitter: <a href="https://twitter.com/roshini" target="_blank">@roshini</a></p>
+            <button onclick="window.location.href='index.html'">Return to Home</button>
+        </section>
     </main>
+
     <footer>
-        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+        <p>&copy; 2025 Roshini's Portfolio. All rights reserved.</p>
     </footer>
 </body>
 </html>

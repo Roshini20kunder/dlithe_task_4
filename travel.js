@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.getElementById("searchInput");
     const costFilter = document.getElementById("costFilter");
     const distanceFilter = document.getElementById("distanceFilter");
+    const container = document.querySelector(".destination-container");
 
     const travelData = [
         { id: 1, title: "Paris, France", image: "paris.jpg", description: "The City of Love.", cost: 2500, distance: 4500 },
@@ -20,23 +21,20 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     function loadDestinations(filteredData) {
-        const container = document.querySelector(".destination-container");
-        container.innerHTML = "";
-        if (filteredData.length === 0) {
-            container.innerHTML = `<p>No destinations found.</p>`;
-            return;
-        }
-        filteredData.forEach(destination => {
-            const card = document.createElement("div");
-            card.classList.add("destination-card");
-            card.setAttribute("data-id", destination.id);
-            card.innerHTML = `
-                <img src="${destination.image}" class="destination-image">
-                <h2>${destination.title}</h2>
-            `;
-            card.addEventListener("click", () => showDestinationDetails(destination));
-            container.appendChild(card);
-        });
+        container.innerHTML = filteredData.length
+            ? filteredData.map(destination => `
+                <div class="destination-card" data-id="${destination.id}">
+                    <img src="${destination.image}" alt="${destination.title}" class="destination-image">
+                    <h2>${destination.title}</h2>
+                </div>
+            `).join('')
+            : `<p>No destinations found.</p>`;
+
+        document.querySelectorAll(".destination-card").forEach(card => 
+            card.addEventListener("click", () => showDestinationDetails(
+                travelData.find(dest => dest.id == card.dataset.id)
+            ))
+        );
     }
 
     function showDestinationDetails(destination) {
@@ -49,31 +47,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function filterDestinations() {
-        let filtered = travelData;
-
         const searchQuery = searchInput.value.toLowerCase();
         const selectedCost = costFilter.value;
         const selectedDistance = distanceFilter.value;
 
-        if (searchQuery) {
-            filtered = filtered.filter(dest => dest.title.toLowerCase().includes(searchQuery));
-        }
+        const filtered = travelData.filter(dest => {
+            const matchesSearch = dest.title.toLowerCase().includes(searchQuery);
+            const matchesCost = selectedCost === "all" || 
+                (selectedCost === "low" && dest.cost < 2000) || 
+                (selectedCost === "medium" && dest.cost >= 2000 && dest.cost <= 3000) || 
+                (selectedCost === "high" && dest.cost > 3000);
 
-        if (selectedCost !== "all") {
-            filtered = filtered.filter(dest => {
-                if (selectedCost === "low") return dest.cost < 2000;
-                if (selectedCost === "medium") return dest.cost >= 2000 && dest.cost <= 3000;
-                if (selectedCost === "high") return dest.cost > 3000;
-            });
-        }
+            const matchesDistance = selectedDistance === "all" || 
+                (selectedDistance === "short" && dest.distance <= 3000) || 
+                (selectedDistance === "medium" && dest.distance > 3000 && dest.distance <= 6000) || 
+                (selectedDistance === "long" && dest.distance > 6000);
 
-        if (selectedDistance !== "all") {
-            filtered = filtered.filter(dest => {
-                if (selectedDistance === "short") return dest.distance <= 3000;
-                if (selectedDistance === "medium") return dest.distance > 3000 && dest.distance <= 6000;
-                if (selectedDistance === "long") return dest.distance > 6000;
-            });
-        }
+            return matchesSearch && matchesCost && matchesDistance;
+        });
 
         loadDestinations(filtered);
     }
@@ -82,10 +73,16 @@ document.addEventListener("DOMContentLoaded", () => {
     costFilter.addEventListener("change", filterDestinations);
     distanceFilter.addEventListener("change", filterDestinations);
 
-    closeModalButtons.forEach(button => button.addEventListener("click", () => {
-        modal.style.display = "none";
-        registrationModal.style.display = "none";
-    }));
+    closeModalButtons.forEach(button => 
+        button.addEventListener("click", () => {
+            modal.style.animation = "fadeOut 0.3s";
+            setTimeout(() => {
+                modal.style.display = "none";
+                modal.style.animation = "";
+            }, 250);
+            registrationModal.style.display = "none";
+        })
+    );
 
     loadDestinations(travelData);
 });

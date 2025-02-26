@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for Trip</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="travel_registration.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Register for Your Trip</h1>
+    </header>
+    <main>
+        <form id="registrationForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="destination">Select Destination:</label>
+            <select id="destination">
+                <option value="paris">Paris, France</option>
+                <option value="bali">Bali, Indonesia</option>
+                <option value="newyork">New York, USA</option>
+                <option value="tokyo">Tokyo, Japan</option>
+                <option value="santorini">Santorini, Greece</option>
+            </select>
+
+            <button type="submit">Register</button>
+        </form>
+        <button onclick="window.location.href='travel.html'">Return to Home</button>
+    </main>
+</body>
+</html>

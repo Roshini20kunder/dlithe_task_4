@@ -14,30 +14,34 @@
     <main>
         <section class="search-container">
             <input type="text" id="searchInput" placeholder="Search news..." aria-label="Search News">
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="world">World</option>
+                <option value="sports">Sports</option>
+                <option value="technology">Technology</option>
+                <option value="health">Health</option>
+                <option value="environment">Environment</option>
+            </select>
+            <select id="dateFilter">
+                <option value="all">All Dates</option>
+                <option value="today">Today</option>
+                <option value="week">This Week</option>
+                <option value="month">This Month</option>
+            </select>
+            <select id="popularityFilter">
+                <option value="all">All Popularity</option>
+                <option value="high">Most Popular</option>
+                <option value="medium">Moderately Popular</option>
+                <option value="low">Least Popular</option>
+            </select>
         </section>
         <div class="news-container">
-            <div class="news-card" data-id="1">
-                <img src="news-image1.jpg" alt="News 1" class="news-image">
-                <h2>Major Earthquake Hits City</h2>
-            </div>
-            <div class="news-card" data-id="2">
-                <img src="news-image2.jpg" alt="News 2" class="news-image">
-                <h2>Local Team Wins Championship</h2>
-            </div>
-            <div class="news-card" data-id="3">
-                <img src="news-image3.jpg" alt="News 3" class="news-image">
-                <h2>New Smartphone Released</h2>
-            </div>
-            <div class="news-card" data-id="4">
-                <img src="news-image4.jpg" alt="News 4" class="news-image">
-                <h2>Flu Season Approaches</h2>
-            </div>
-            <div class="news-card" data-id="5">
-                <img src="news-image5.jpg" alt="News 5" class="news-image">
-                <h2>New Conservation Efforts Launched</h2>
-            </div>
+            <!-- News articles will be dynamically inserted here -->
         </div>
     </main>
+    <section>
+        <button onclick="window.location.href='index.html'">Return to Home</button>
+    </section>
 
     <!-- News Modal -->
     <div id="newsModal" class="modal">
